@@ -15,6 +15,11 @@ import Specifics from "./jobdetails/specifics/Specifics";
 // common
 import NearbyJobCard from "./common/cards/nearby/NearbyJobCard";
 
+//Loader 
+import SkeletonLoader from "./loader/SkeletonLoader";
+
+
+
 export {
   ScreenHeaderBtn,
   Welcome,
@@ -25,5 +30,6 @@ export {
   JobAbout,
   JobFooter,
   Specifics,
-  NearbyJobCard
+  NearbyJobCard,
+  SkeletonLoader,
 };

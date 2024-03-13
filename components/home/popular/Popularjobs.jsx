@@ -2,9 +2,10 @@ import { useState } from 'react'
 import { View, Text,
    TouchableOpacity,
     FlatList,
-  ActivityIndicator } from 'react-native'
+   } from 'react-native'
 import { useRouter } from 'expo-router'
 import useFetch from '../../../hooks/useFetch'
+import SkeletonLoader from '../../loader/SkeletonLoader'
 
 
 import { COLORS, SIZES } from '../../../constants'
@@ -15,11 +16,10 @@ import styles from './popularjobs.style'
 const Popularjobs = () => {
 
   const router = useRouter();
-  const { data, isLoading, error } = useFetch('search', {
+  const { data,  error, isLoading} = useFetch('search', {
     query: 'Python developer in US',
     num_pages: '1',
   } )
-
 
   const [selectedJob, setSelectedJob] = useState("");
 
@@ -33,16 +33,16 @@ const Popularjobs = () => {
     <View style={styles.container}>
      <View style={styles.header}>
         <Text style={styles.headerTitle}>Popular jobs</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => { router.push(`/show-all/python-developer`)}}>
           <Text style={styles.headerBtn}>Show all</Text>
         </TouchableOpacity>
      </View>
 
      <View style={styles.cardsContainer}>
         {isLoading ? (
-          <ActivityIndicator size="large" colors={COLORS.primary} />
+          <SkeletonLoader />
         ) : error ? (
-          <Text>Something went wrong</Text>
+          <Text style={{ color: COLORS.warning, textAlign: "center" }} >Something went wrong. Reload app.</Text>
         ) : (<FlatList
             data={data} 
             initialNumToRender={6}

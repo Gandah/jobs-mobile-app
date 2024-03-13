@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'react-native'
+import { FlatList, Image, TouchableOpacity, View } from 'react-native'
 import { Stack, useRouter, useLocalSearchParams } from 'expo-router'
 import { Text, SafeAreaView } from 'react-native'
 import axios from 'axios'
@@ -7,6 +7,7 @@ import axios from 'axios'
 import { ScreenHeaderBtn, NearbyJobCard } from '../../components'
 import { COLORS, icons, SIZES } from '../../constants'
 import styles from '../../styles/search'
+import StripeLoader from '../../components/loader/StripeLoader'
 
 const JobSearch = () => {
     const params = useLocalSearchParams();
@@ -94,7 +95,7 @@ const JobSearch = () => {
                         </View>
                         <View style={styles.loaderContainer}>
                             {searchLoader ? (
-                                <ActivityIndicator size='large' color={COLORS.primary} />
+                                <StripeLoader />
                             ) : searchError && (
                                 <Text>Oops something went wrong</Text>
                             )}

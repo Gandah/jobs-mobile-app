@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { FlatList, Image, TouchableOpacity, View } from "react-native";
+import { FlatList,  View } from "react-native";
 import { Stack, useRouter, useLocalSearchParams } from "expo-router";
 import { Text, SafeAreaView } from "react-native";
 import axios from "axios";
@@ -16,8 +15,7 @@ const JobSearch = () => {
   const router = useRouter();
 
   const pageName = toTitleCase(params.index)  
- 
-    // console.log(pageName)
+
 
   const { data, isLoading, error } = useFetch("search", {
     query: `${pageName}`,

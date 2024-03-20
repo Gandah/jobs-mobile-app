@@ -30,6 +30,8 @@ A mobile application for job search with a visually pleasing interface.
 
 ### 📸Screenshots
 
+![Recording](./screenshots/Screenrecord.mov)
+
 ![Home](./screenshots/home.jpg)
 ![Job Details](./screenshots/search.png)
 ![Home](./screenshots/jobdetails.png)

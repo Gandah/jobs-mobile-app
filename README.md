@@ -30,14 +30,12 @@ A mobile application for job search with a visually pleasing interface.
 
 ### 📸Screenshots
 
- <video controls="controls">
-  <source type="video/mp4" src="./screenshots/Screenrecord2.mp4"></source>
-  <p>Your browser does not support the video element.</p>
-</video>
+![App icon](./screenshots/app-icon.jpg)
+![Welcome](./screenshots/screenrecord.gif)
 
-![Home](./screenshots/home.jpg)
-![Job Details](./screenshots/search.png)
-![Home](./screenshots/jobdetails.png)
+![Job Details](./screenshots/jobdetails.png)
+![Search](./screenshots/search.png)
+
 
 ### 🔗Links
 
